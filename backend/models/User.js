@@ -2,12 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Define collection and schema
-let Customer = new Schema({
+let User = new Schema({
    name: {
       type: String
    }
 }, {
-   collection: 'customers'
+   collection: 'users'
 })
 
-module.exports = mongoose.model('Customer', Customer)
+module.exports = mongoose.model('User', User)

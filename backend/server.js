@@ -18,8 +18,7 @@ mongoose.connect(dbConfig.db, {
 )
 
 // Setting up port with express js
-const employeeRoute = require('../backend/routes/employee.route');
-const customerRoute = require('../backend/routes/customer.route');
+const userRoute = require('../backend/routes/user.route');
 const productRoute = require('../backend/routes/product.route');
 const orderRoute = require('../backend/routes/order.route');
 
@@ -27,13 +26,12 @@ const orderRoute = require('../backend/routes/order.route');
 const app = express();
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
-   extended: false
+   extended: true
 }));
 app.use(cors());
 app.use(express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
 app.use('/', express.static(path.join(__dirname, 'dist/mean-stack-crud-app')));
-app.use('/api', employeeRoute);
-app.use('/api', customerRoute);
+app.use('/api', userRoute);
 app.use('/api', productRoute);
 app.use('/api', orderRoute);
 

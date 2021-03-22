@@ -3,17 +3,20 @@ const Schema = mongoose.Schema;
 
 // Define collection and schema
 let Order = new Schema({
-   id_customer: {
-      type: String
+   id_user: {
+    type: mongoose.Schema.Types.ObjectId, ref: 'users'
    },
    id_product: {
-      type: String
+    type: mongoose.Schema.Types.ObjectId, ref: 'products'
    },
    quantity: {
-    type: String
+    type: Number
    },
    total: {
-      type: String
+      type: Number
+   },
+   discounted_total: {
+    type: Number
    },
    date_add: {
       type: Date,

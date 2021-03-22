@@ -6,8 +6,8 @@ let Product = new Schema({
    name: {
       type: String
    },
-   price: {
-      type: String
+   unit_price: {
+      type: Number
    }
 }, {
    collection: 'products'

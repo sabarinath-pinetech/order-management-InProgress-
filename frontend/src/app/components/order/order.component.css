@@ -1,0 +1,47 @@
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+td,
+th {
+    border: 1px solid #d4ba44;
+    text-align: left;
+    padding: 8px;
+    max-width: 100px;
+    align-items: center;
+}
+
+tr {
+    background-color: #edeee3;
+    align-items: center;
+}
+
+h3 {
+    color: rgb(29, 29, 185);
+}
+
+.custom-select {
+    width: 250px;
+}
+
+.custom-input {
+    width: 250px;
+}
+
+.my-button {
+    text-align: center;
+    background-color: rgb(20, 149, 230);
+    min-width: 250px;
+    color:#dddddd;
+    position: relative;
+}
+
+.alert-danger {
+    background-color: none;
+    color: rgb(218, 125, 125);
+    padding: 3px;
+    max-width: 250px;
+    text-align: center;
+}

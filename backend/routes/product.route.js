@@ -6,7 +6,7 @@ const productRoute = express.Router();
 let Product = require('../models/Product');
 
 // Add Product
-productRoute.route('/product/create').post((req, res, next) => {
+productRoute.route('/product/').post((req, res, next) => {
   Product.create(req.body, (error, data) => {
     if (error) {
       return next(error)
@@ -28,7 +28,7 @@ productRoute.route('/product/').get((req, res) => {
 })
 
 // Get single product
-productRoute.route('/product/read/:id').get((req, res) => {
+productRoute.route('/product/:id').get((req, res) => {
   Product.findById(req.params.id, (error, data) => {
     if (error) {
       return next(error)
@@ -40,7 +40,7 @@ productRoute.route('/product/read/:id').get((req, res) => {
 
 
 // Update product
-productRoute.route('/product/update/:id').put((req, res, next) => {
+productRoute.route('/product/:id').put((req, res, next) => {
   Product.findByIdAndUpdate(req.params.id, {
     $set: req.body
   }, (error, data) => {
@@ -55,7 +55,7 @@ productRoute.route('/product/update/:id').put((req, res, next) => {
 })
 
 // Delete product
-productRoute.route('/product/delete/:id').delete((req, res, next) => {
+productRoute.route('/product/:id').delete((req, res, next) => {
   Product.findOneAndRemove(req.params.id, (error, data) => {
     if (error) {
       return next(error);
